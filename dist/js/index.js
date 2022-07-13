@@ -9,7 +9,25 @@ function buttonBind() {
   });
 }
 
+function moveWord() {
+  $("#moveWord>span").each(function () {
+    let imgTag1 = document.createElement("img");
+    imgTag1.src = "/dist/images/ECONOVATION_B.png";
+    let imgTag2 = document.createElement("img");
+    imgTag2.src = "/dist/images/bar_W.png";
+    let imgTag3 = document.createElement("img");
+    imgTag3.src = "/dist/images/SUMMERDEV_W.png";
+
+    this.append(imgTag1);
+    this.append(imgTag2);
+    this.append(imgTag3);
+  });
+}
+
 $(document).ready(() => {
+  buttonBind();
+  moveWord();
+
   new fullpage("#fullpage", {
     licenseKey: "",
     anchors: [
@@ -26,6 +44,7 @@ $(document).ready(() => {
     scrollHorizontally: true,
   });
 
+  // category button
   if (location.href.match(/category/)) {
     location.href = "/index.html#mainSection";
   }
@@ -37,5 +56,14 @@ $(document).ready(() => {
     }
   );
 
-  buttonBind();
+  // loading
+  const typed_options = {
+    strings: ["SUM() <br> MORE <br> DEV!"],
+    typeSpeed: 50,
+    showCursor: false,
+    onComplete: () => {
+      $(".overlay").fadeOut(700);
+    },
+  };
+  typed = new Typed(".overlay > div", typed_options);
 });
