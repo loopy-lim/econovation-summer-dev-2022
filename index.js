@@ -1,4 +1,5 @@
 new fullpage("#fullpage", {
+  licenseKey: "",
   anchors: [
     "firstPage",
     "secondPage",
@@ -11,4 +12,9 @@ new fullpage("#fullpage", {
 
   autoScrolling: true,
   scrollHorizontally: true,
+});
+
+document.getElementsByClassName("fp-watermark")[0].remove();
+new Array(...document.getElementsByClassName("fp-arrow")).forEach((fpArrow) => {
+  fpArrow.remove();
 });
