@@ -1,16 +1,15 @@
 function buttonBind() {
   // Category Section
   $("#category-button").on("click", () => {
-    if (isCategoryButtonActive) {
-      $("#category-button").addClass("is-active");
-    } else {
+    if (location.href.match(/category/)) {
       $("#category-button").removeClass("is-active");
+    } else {
+      $("#category-button").addClass("is-active");
     }
-    isCategoryButtonActive = !isCategoryButtonActive;
   });
 }
 
-function init() {
+$(document).ready(() => {
   new fullpage("#fullpage", {
     licenseKey: "",
     anchors: [
@@ -21,11 +20,15 @@ function init() {
       "fifthPage",
       "sixthPage",
     ],
-    sectionsColor: ["#f2f2f2", "#4BBFC3", "#7BAABE", "whitesmoke", "#000"],
+    //sectionsColor: ["#f2f2f2", "#4BBFC3", "#7BAABE", "whitesmoke", "#000"],
 
     autoScrolling: true,
     scrollHorizontally: true,
   });
+
+  if (location.href.match(/category/)) {
+    location.href = "/index.html#mainSection";
+  }
 
   document.getElementsByClassName("fp-watermark")[0].remove();
   new Array(...document.getElementsByClassName("fp-arrow")).forEach(
@@ -33,8 +36,6 @@ function init() {
       fpArrow.remove();
     }
   );
-  buttonBind();
-}
-let = isCategoryButtonActive = true;
 
-init();
+  buttonBind();
+});
