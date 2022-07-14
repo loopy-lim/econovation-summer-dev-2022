@@ -1,11 +1,15 @@
 function buttonBind() {
   // Category Section
-  $("#category-button").on("click", () => {
+  $("#category-button").on("click", function () {
     if (location.href.match(/category/)) {
       $("#category-button").removeClass("is-active");
     } else {
       $("#category-button").addClass("is-active");
     }
+  });
+
+  $(".faq-q-box").each(function (index) {
+    $(this).on("click", { index }, faq);
   });
 }
 
@@ -31,6 +35,32 @@ function swiperSchedule() {
   });
 }
 
+function faq(event) {
+  let faqA = $(`#faq-a-${event.data.index}`);
+  let degree = 0;
+  faqA.slideToggle();
+  if (faqA.hasClass(".open")) {
+    faqA.removeClass(".open");
+  } else {
+    faqA.addClass(".open");
+    degree = 90;
+  }
+
+  $(`#faq-q-${event.data.index} > svg`).animate(
+    {
+      borderSpacing: degree,
+    },
+    {
+      step: function (now, fx) {
+        $(this).css("-webkit-transform", "rotateZ(" + now + "deg)");
+        $(this).css("-moz-transform", "rotateZ(" + now + "deg)");
+        $(this).css("transform", "rotateZ(" + now + "deg)");
+      },
+    },
+    "linear"
+  );
+}
+
 $(document).ready(function () {
   buttonBind();
   moveWord();
@@ -46,7 +76,18 @@ $(document).ready(function () {
       "fifthPage",
       "sixthPage",
     ],
-    //sectionsColor: ["#f2f2f2", "#4BBFC3", "#7BAABE", "whitesmoke", "#000"],
+    sectionsColor: [
+      "#fff",
+      "#fff",
+      "#fff",
+      "#fff",
+      "transport",
+      "#fff",
+      "#fff",
+      "#fff",
+      "#fff",
+      "#fff",
+    ],
 
     autoScrolling: true,
     scrollHorizontally: true,
