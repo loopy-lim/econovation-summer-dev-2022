@@ -10,7 +10,14 @@ function buttonBind() {
 }
 
 function moveWord() {
-  // $('#moveWord')
+  $(".move-word").hover(
+    function () {
+      $(this).find("img").attr("src", "dist/images/econovation_h.png");
+    },
+    function () {
+      $(this).find("img").attr("src", "dist/images/econovation_n.png");
+    }
+  );
 }
 
 function swiperSchedule() {
@@ -59,7 +66,9 @@ $(document).ready(function () {
 
   // loading
   const typed_options = {
-    strings: ["SUM() <br> MORE <br> DEV!"],
+    strings: [
+      "SUM(<span style='margin-left: 20px;'></span>) <br> MORE <br> DEV!",
+    ],
     typeSpeed: 50,
     showCursor: false,
     onComplete: () => {
