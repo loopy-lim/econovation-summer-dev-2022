@@ -132,9 +132,6 @@ button {
 	object-fit: cover;
 }
 
-#schedule {
-}
-
 .visual_nav .swiper-button-next {
 	width: 16px;
 	height: 16px;
@@ -274,4 +271,28 @@ button {
     -o-transform:translateX(-200%);
     -ms-transform:translateX(-200%);
   }
+}
+
+#sentence-block {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+#sentence-title {
+	font-size: 70px;
+	font-weight: 600;
+}
+
+#sentence-subtitle {
+	margin-top: 80px;
+	font-size: 20px;
+	line-height: 40px;
+}
+
+.intro-dev {
+	background-color: black;
+	align-items: center;
 }
