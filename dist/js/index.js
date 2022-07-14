@@ -10,23 +10,24 @@ function buttonBind() {
 }
 
 function moveWord() {
-  $("#moveWord>span").each(function () {
-    let imgTag1 = document.createElement("img");
-    imgTag1.src = "/dist/images/ECONOVATION_B.png";
-    let imgTag2 = document.createElement("img");
-    imgTag2.src = "/dist/images/bar_W.png";
-    let imgTag3 = document.createElement("img");
-    imgTag3.src = "/dist/images/SUMMERDEV_W.png";
+  // $('#moveWord')
+}
 
-    this.append(imgTag1);
-    this.append(imgTag2);
-    this.append(imgTag3);
+function swiperSchedule() {
+  new Swiper(".e-swiper", {
+    centeredSlides: true,
+    centeredSlidesBounds: true,
+    loop: true,
+    loopAdditionalSlides: 30,
+    slidesPerView: 5,
+    direction: "vertical",
   });
 }
 
-$(document).ready(() => {
+$(document).ready(function () {
   buttonBind();
   moveWord();
+  swiperSchedule();
 
   new fullpage("#fullpage", {
     licenseKey: "",
@@ -65,5 +66,7 @@ $(document).ready(() => {
       $(".overlay").fadeOut(700);
     },
   };
-  typed = new Typed(".overlay > div", typed_options);
+  new Typed(".overlay > div", typed_options);
+
+  // swiper schedule
 });
