@@ -71,8 +71,8 @@ function projectTeamButtonClick(teamName) {
   $(".project-intro-inner-section").html(teamType[teamName]);
   $(".project-intro-inner-title").html(selectTeam.title);
   $(".project-intro-inner-team-title").html(
-    teamName +
-      `<div style='margin: -19px -3px 0px -3px;height: 15px; opacity: ${selectTeam.opacity}; background-color: ${selectTeam.color}; z-index: -1'></div>`
+    `<div style='margin: -0px -3px -35px -3px;height: 15px; opacity: ${selectTeam.opacity}; background-color: ${selectTeam.color};z-index: -1;position: relative;'></div>` +
+      teamName
   );
   $(".project-intro-inner-team-people").html(selectTeam.people);
   $(".project-intro-inner-subtitle").html(selectTeam.subTitle);
