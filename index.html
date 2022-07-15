@@ -11,7 +11,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" /> -->
   <link rel="stylesheet" href="dist/css/index.css">
   <link rel="stylesheet" href="dist/css/hamburgers.css">
 </head>
@@ -59,14 +59,14 @@
     </div>
     <div class="section" data-anchor="one-sentence">
       <div id="sentence-block">
-        <div id="sentence-title">2022 SUMMERD DEV</div>
+        <div id="sentence-title">2022 SUMMER DEV</div>
         <div id="sentence-subtitle">팀을 이루어 협업하는 과정에서 얻은 경험들을
           <br>다른 사람들과 함께 공유하며 성장할 수 있는
           <br>개발 네트워크를 만들기 위해 개최합니다.
         </div>
       </div>
     </div>
-    <div class=" section" data-anchor="schedule">
+    <div class=" section" data-anchor="timetable">
       <div>
         <div class="swiper main-swiper">
           asdfasdf
@@ -101,7 +101,34 @@
     <div class="section intro-dev" data-anchor="intro-dev">
       <img src="dist/images/intro-dev.svg" alt="intro-dev">
     </div>
-    <div class="section" data-anchor="section6"></div>
+    <div class="section" data-anchor="project">
+      <div style="display: flex; flex-direction: row; padding: 50px 70px; justify-content:initial">
+        <div id="project-menu-box">
+
+        </div>
+        <div id="project-intro-box" style="display:none; height: 100%;">
+          <img src="" alt="" class="project-intro-img" style="margin-left: 70px; margin-right:40px;object-fit: cover;">
+          <div class="project-intro-inner-box">
+            <div class="project-intro-inner-section"></div>
+            <div class="project-intro-inner-title"></div>
+            <div class="project-intro-inner-team-box">
+              <div class="project-intro-inner-team-title">
+                <div></div>
+              </div>
+              <div class="project-intro-inner-team-people"></div>
+            </div>
+            <div class="project-intro-inner-subtitle"></div>
+            <button class="project-intro-inner-button">자세히보기</button>
+          </div>
+        </div>
+        <div id="project-intro-subbox" style="display:none; height: 100%;">
+          <div class="project-intro-subbox-title">아이디어</div>
+          <div class="project-intro-idea project-intro-subbox-title"></div>
+          <div class="project-intro-subbox-title">관련 기술 소개</div>
+          <div class="project-intro-tech project-intro-subbox-title"></div>
+        </div>
+      </div>
+    </div>
     <div class="section faq" data-anchor="FAQ">
       <div id="faq-title">FAQ</div>
       <div class="faq-body">
@@ -173,57 +200,75 @@
         </div>
       </div>
     </div>
-    <div class="section" data-anchor="section8"></div>
+    <div class="section" data-anchor="event">
+      <div id="event-title">EVENT</div>
+      <div class="event-outer-box">
+        <div class="event-box">
+          <div class="event-inner-box">
+            <div class="event-title">여름 방학 다짐</div>
+            <div class="event-subtitle">전남대학교 에브리타임 홍보글에 남은 방학동안 나의 다짐을 적어보아요!</div>
+          </div>
+          <a class="event-button">에브리타임 바로가기</a>
+        </div>
+        <div class="event-box">
+          <div class="event-inner-box">
+            <div class="event-title">인스타그램 리그램</div>
+            <div class="event-subtitle">전남대학교 에브리타임 홍보글에 남은 방학동안 나의 의짐을 적어보아요!</div>
+          </div>
+          <a class="event-button">인스타그램 바로가기</a>
+        </div>
+      </div>
+    </div>
     <div class="section" data-anchor="notice">
-        <div class="notice-section">
-          <div id="notice-title">NOTICE</div>
-          <div class="notice-block">
-            <div class="notice-split-block">
-              <div id="kakaotalk-notice">
-                <div class="notice-img"><img src="dist/images/kakao.svg" alt="kakao"></div>
-                <div class="notice-text">
-                  <div class="notice-title">Kakao Talk</div>
-                  <div class="notice-subtitle">카카오톡 채널 - 에코노베이션(econovation)</div>
-                </div>
-              </div>
-              <div id="medium-notice">
-                <div class="notice-img"><img src="dist/images/medium.svg" alt="medium"></div>
-                <div class="notice-text">
-                  <div class="notice-title">Medium</div>
-                  <div class="notice-subtitle">ECONOVATION</div>
-                </div>
+      <div class="notice-section">
+        <div id="notice-title">NOTICE</div>
+        <div class="notice-block">
+          <div class="notice-split-block">
+            <div id="kakaotalk-notice" class="notice-button">
+              <div class="notice-img"><img src="dist/images/kakao.svg" alt="kakao"></div>
+              <div class="notice-text">
+                <div class="notice-title">Kakao Talk</div>
+                <div class="notice-subtitle">카카오톡 채널 - 에코노베이션(econovation)</div>
               </div>
             </div>
-            <div class="notice-split-block">
-              <div id="instagram-notice">
-                <div class="notice-img"><img src="dist/images/instagram.svg" alt="instagram"></div>
-                <div class="notice-text">
-                  <div class="notice-title">Instagram</div>
-                  <div class="notice-subtitle">@cnu_econovation</div>
-                </div>
+            <div id="medium-notice" class="notice-button">
+              <div class="notice-img"><img src="dist/images/medium.svg" alt="medium"></div>
+              <div class="notice-text">
+                <div class="notice-title">Medium</div>
+                <div class="notice-subtitle">ECONOVATION</div>
               </div>
-              <div id="homepage-notice">
-                <div class="notice-img"><img src="dist/images/econo.svg" alt="econo"></div>
-                <div class="notice-text">
-                  <div class="notice-title">Homepage</div>
-                  <div class="notice-subtitle">econovation.kr</div>
-                </div>
+            </div>
+          </div>
+          <div class="notice-split-block">
+            <div id="instagram-notice" class="notice-button">
+              <div class="notice-img"><img src="dist/images/instagram.svg" alt="instagram"></div>
+              <div class="notice-text">
+                <div class="notice-title">Instagram</div>
+                <div class="notice-subtitle">@cnu_econovation</div>
+              </div>
+            </div>
+            <div id="homepage-notice" class="notice-button">
+              <div class="notice-img"><img src="dist/images/econo.svg" alt="econo"></div>
+              <div class="notice-text">
+                <div class="notice-title">Homepage</div>
+                <div class="notice-subtitle">econovation.kr</div>
               </div>
             </div>
           </div>
         </div>
-        <div class="footer">
-          <div id="footer-sum">
-            (&nbsp;&nbsp;&nbsp;)SUM
-            <br>
-            MORE
-            <br>
-            DEV
-          </div>
-          <div>
-            @econovation.All rights reserved.
-          </div>
+      </div>
+      <div class="footer">
+        <div id="footer-sum">
+          (&nbsp;&nbsp;&nbsp;)SUM
+          <br>
+          MORE
+          <br>
+          DEV
         </div>
+        <div>
+          @econovation.All rights reserved.
+        </div>
+      </div>
     </div>
   </div>
 
@@ -239,6 +284,7 @@
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
   <script src="dist/js/moveWord.js"></script>
+  <script src="dist/js/info.js"></script>
   <script src="dist/js/index.js"></script>
 </body>
 

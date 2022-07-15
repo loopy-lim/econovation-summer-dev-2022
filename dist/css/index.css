@@ -11,6 +11,13 @@ button:hover {
 button {
 	background-color: transparent;
 	border: 0px solid;
+	padding: 0px;
+	margin: 0px;
+}
+
+a:hover {
+	cursor: url(/dist/images/point.png), auto !important;
+	opacity: 0.7;
 }
 
 .overlay {
@@ -154,6 +161,10 @@ button {
 
 #notice {
 	justify-content: space-between;
+}
+.notice-button:hover {
+	cursor: url(/dist/images/point.png), auto !important;
+	opacity: 0.7;
 }
 
 #footer-sum {
@@ -341,4 +352,145 @@ button {
 	margin: 20px 0px;
 	line-height: 30px;
 	display: none;
+}
+
+.faq-q-box:hover {
+	cursor: url(/dist/images/point.png), auto !important;
+	opacity: 0.7;
+}
+
+#event-title {
+	font-size: 64px;
+	font-weight: bolder;
+	text-align: center;
+}
+
+.event-box {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid;
+	width: 800px;
+}
+
+.event-title {
+	font-size: 32px;
+	font-weight: bold;
+	margin-top: 40px;
+}
+
+.event-subtitle {
+	font-size: 20px;
+	margin: 40px 0px;
+}
+
+.event-button {
+	padding: 10px 20px;
+	border-radius: 1000px;
+	border: 1.5px solid;
+	text-decoration: none;
+	color: black
+}
+
+.event-button:hover {
+	color:black;
+	opacity: 0.7;
+}
+
+.event-outer-box {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#project-menu-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.project-section-title{
+	font-size: 75px;
+	font-weight: bolder;
+}
+
+.project-section-team-box button{
+	margin-right: 10px;
+}
+
+.project-intro-img {
+	height: 600px;
+	width: 600px;
+}
+
+.project-intro-inner-section{
+	color: #9B9B9B;
+	font-size: 24px;
+	font-weight: bolder;
+	margin-bottom: 21px;
+}
+
+.project-intro-inner-title {
+	font-size: 38px;
+	line-height: 42px;
+	margin-bottom: 10px;
+}
+
+.project-intro-inner-team-box {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: 20px;
+}
+.project-intro-inner-team-title{
+	font-size: 27px;
+	font-weight: bold;
+}
+.project-intro-inner-team-people {
+	margin-left: 20px;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.project-intro-inner-subtitle {
+	font-size: 18px;
+	margin-bottom: 25px;
+}
+.project-intro-inner-button{
+	border-radius: 1000px;
+	padding: 10px 20px;
+	border: 1px solid;
+}
+
+#project-intro-box {
+	display: flex;
+	align-items: center;
+}
+
+.project-intro-inner-box {
+	width: 360px;
+}
+
+#project-intro-subbox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 340px;
+}
+
+.project-intro-subbox-title {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 15px;
+	line-height: 30px;
+}
+.project-intro-idea {
+	font-size: 15px;
+	font-weight: normal;
+	margin-bottom: 28px;
+}
+.project-intro-tech {
+	font-size: 15px;
+	font-weight: normal;
+	margin-bottom: 28px;
 }

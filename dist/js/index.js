@@ -11,6 +11,105 @@ function buttonBind() {
   $(".faq-q-box").each(function (index) {
     $(this).on("click", { index }, faq);
   });
+
+  $(".project-intro-inner-button").on("click", projectDetailButtonClick);
+
+  $("#kakaotalk-notice").on("Click", function () {});
+  $("#medium-notice").on("Click", function () {});
+  $("#instagram-notice").on("Click", function () {});
+  $("#homepage-notice").on("Click", function () {});
+}
+
+function introAttache() {
+  const data = introData["data"];
+
+  // menu 생성
+  data.forEach((d) => {
+    const projectBox = document.createElement("div");
+    projectBox.className = "project-section-box";
+    const projectTitle = document.createElement("div");
+    projectTitle.className = "project-section-title";
+    projectTitle.id = d.type;
+    projectTitle.innerHTML = d.type;
+    projectBox.appendChild(projectTitle);
+    const projectTeamBox = document.createElement("div");
+    projectTeamBox.className = "project-section-team-box";
+
+    d.teams.forEach((team) => {
+      const projectTeamButton = document.createElement("button");
+      projectTeamButton.className = "project-section-team-button";
+      projectTeamButton.setAttribute("data-team", team.teamName);
+      projectTeamButton.addEventListener("click", () =>
+        projectTeamButtonClick(team.teamName)
+      );
+      projectTeamButton.innerHTML = team.teamName;
+      projectTeamBox.appendChild(projectTeamButton);
+    });
+    projectBox.appendChild(projectTeamBox);
+    $("#project-menu-box").append(projectBox);
+  });
+}
+
+function projectTeamButtonClick(teamName) {
+  $(".project-section-title").css("color", "#D7D7D7D7");
+  $(".project-section-title").animate({ fontSize: 44 });
+  $(".project-section-team-box").animate({ fontSize: 14 });
+  $(".project-section-team-box").animate({ width: 135 });
+  $("#project-menu-box").animate({ width: 250 });
+  $(".project-section-team-box button").css("color", "#D7D7D7D7");
+  $(".project-section-team-box")
+    .find(`[data-team='${teamName}']`)
+    .css("color", "black");
+  $(`#${teamType[teamName]}`).css("color", "black");
+
+  const teams = introData["data"].filter(
+    (d) => d.type == [teamType[teamName]]
+  )[0];
+
+  const selectTeam = teams.teams.filter((t) => t.teamName == teamName)[0];
+  $(".project-intro-img").attr("src", selectTeam.img);
+  $(".project-intro-inner-section").html(teamType[teamName]);
+  $(".project-intro-inner-title").html(selectTeam.title);
+  $(".project-intro-inner-team-title").html(
+    teamName +
+      `<div style='margin: -19px -3px 0px -3px;height: 15px; opacity: ${selectTeam.opacity}; background-color: ${selectTeam.color}; z-index: -1'></div>`
+  );
+  $(".project-intro-inner-team-people").html(selectTeam.people);
+  $(".project-intro-inner-subtitle").html(selectTeam.subTitle);
+  $(".project-intro-idea").html(selectTeam.idea);
+  $(".project-intro-tech").html(selectTeam.tech);
+  $(".project-intro-img").animate({ width: 600 }, 500);
+  $("#project-intro-subbox").hide("slow");
+  $("#project-intro-box").show("slow");
+}
+
+function projectDetailButtonClick() {
+  if ($("#project-intro-subbox").css("display") == "none") {
+    $(".project-intro-img").animate({ width: 190 }, 500);
+  } else {
+    $(".project-intro-img").animate({ width: 600 }, 500);
+  }
+  $("#project-intro-subbox").toggle("slow");
+}
+
+const images = [
+  "dist/images/별을찾아서.png",
+  "dist/images/손말잇기.png",
+  "dist/images/친해지길바라.png",
+  "dist/images/econoBeep.png",
+  "dist/images/hackyourday.png",
+  "dist/images/HairLog.png",
+  "dist/images/healper.png",
+  "dist/images/juggle.png",
+  "dist/images/t-econo.png",
+  "dist/images/econovation_h",
+];
+
+function preload(images) {
+  images.forEach((image) => {
+    const img = new Image();
+    img.src = image;
+  });
 }
 
 function moveWord() {
@@ -65,6 +164,7 @@ $(document).ready(function () {
   buttonBind();
   moveWord();
   swiperSchedule();
+  introAttache();
 
   new fullpage("#fullpage", {
     licenseKey: "",
@@ -108,7 +208,7 @@ $(document).ready(function () {
   // loading
   const typed_options = {
     strings: [
-      "SUM(<span style='margin-left: 20px;'></span>) <br> MORE <br> DEV!",
+      "SUM(<span style='margin-left: 80px;'></span>) <br> MORE <br> DEV!",
     ],
     typeSpeed: 50,
     showCursor: false,
@@ -118,5 +218,6 @@ $(document).ready(function () {
   };
   new Typed(".overlay > div", typed_options);
 
+  preload(images);
   // swiper schedule
 });
