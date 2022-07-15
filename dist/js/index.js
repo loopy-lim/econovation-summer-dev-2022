@@ -166,6 +166,11 @@ $(document).ready(function () {
   swiperSchedule();
   introAttache();
 
+  let href = location.href;
+  if (href[href.length - 1] == "/") {
+    location.href = href + "#mainSection";
+  }
+
   new fullpage("#fullpage", {
     licenseKey: "",
     anchors: [
