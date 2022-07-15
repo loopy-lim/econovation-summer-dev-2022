@@ -14,10 +14,25 @@ function buttonBind() {
 
   $(".project-intro-inner-button").on("click", projectDetailButtonClick);
 
-  $("#kakaotalk-notice").on("Click", function () {});
-  $("#medium-notice").on("Click", function () {});
-  $("#instagram-notice").on("Click", function () {});
-  $("#homepage-notice").on("Click", function () {});
+  $("#kakaotalk-notice").on("click", function () {});
+  $("#medium-notice").on("click", function () {});
+  $("#instagram-notice").on("click", function () {});
+  $("#homepage-notice").on("click", function () {});
+  $("#category-timetable").on("click", function () {
+    location.href = location.pathname + "#timetable";
+  });
+  $("#category-project").on("click", function () {
+    location.href = location.pathname + "#project";
+  });
+  $("#category-faq").on("click", function () {
+    location.href = location.pathname + "#faq";
+  });
+  $("#category-event").on("click", function () {
+    location.href = location.pathname + "#event";
+  });
+  $("#category-notice").on("click", function () {
+    location.href = location.pathname + "#notice";
+  });
 }
 
 function introAttache() {
@@ -62,11 +77,41 @@ function projectTeamButtonClick(teamName) {
     .css("color", "black");
   $(`#${teamType[teamName]}`).css("color", "black");
 
+  if ($("#project-intro-subbox").css("display") == "none") {
+    $(".project-intro-img").animate({ width: 600 }, 500);
+    $("#project-intro-subbox").addClass("fadeOutRight");
+    $("#project-intro-box").addClass("fadeOutRight");
+    setTimeout(() => {
+      changeProjectData(teamName);
+      $("#project-intro-box").removeClass("fadeOutRight");
+      $("#project-intro-box").css("display", "");
+      $("#project-intro-box").addClass("fadeInRight");
+    }, 500);
+  } else {
+    $(".project-intro-img").animate({ width: 600 }, 500);
+    $("#project-intro-subbox").addClass("fadeOutRight");
+    $("#project-intro-box").addClass("fadeOutRight");
+    setTimeout(() => {
+      changeProjectData(teamName);
+      $("#project-intro-box").css("display", "none");
+      $("#project-intro-subbox").css("display", "none");
+      $("#project-intro-box").removeClass("fadeOutRight");
+      setTimeout(() => {
+        $("#project-intro-box").css("display", "");
+        $("#project-intro-subbox").addClass("fadeInRight");
+      }, 500);
+    }, 500);
+    $("#project-intro-subbox").removeClass("fadeInRight");
+    $(".project-intro-inner-button").html("자세히보기");
+  }
+}
+
+function changeProjectData(teamName) {
   const teams = introData["data"].filter(
     (d) => d.type == [teamType[teamName]]
   )[0];
-
   const selectTeam = teams.teams.filter((t) => t.teamName == teamName)[0];
+
   $(".project-intro-img").attr("src", selectTeam.img);
   $(".project-intro-inner-section").html(teamType[teamName]);
   $(".project-intro-inner-title").html(selectTeam.title);
@@ -78,14 +123,6 @@ function projectTeamButtonClick(teamName) {
   $(".project-intro-inner-subtitle").html(selectTeam.subTitle);
   $(".project-intro-idea").html(selectTeam.idea);
   $(".project-intro-tech").html(selectTeam.tech);
-
-  $(".project-intro-img").animate({ width: 600 }, 500);
-  $("#project-intro-box").css("display", "");
-  $("#project-intro-box").addClass("fadeInRight");
-  $("#project-intro-subbox").addClass("fadeOutRight");
-  setTimeout(() => {
-    $("#project-intro-subbox").css("display", "none");
-  }, 700);
 }
 
 function projectDetailButtonClick() {
@@ -94,6 +131,7 @@ function projectDetailButtonClick() {
     $("#project-intro-subbox").css("display", "");
     $("#project-intro-subbox").addClass("fadeInRight");
     $("#project-intro-subbox").removeClass("fadeOutRight");
+    $(".project-intro-inner-button").html("돌아가기");
   } else {
     $(".project-intro-img").animate({ width: 600 }, 500);
     $("#project-intro-subbox").addClass("fadeOutRight");
@@ -101,6 +139,7 @@ function projectDetailButtonClick() {
       $("#project-intro-subbox").css("display", "none");
     }, 700);
     $("#project-intro-subbox").removeClass("fadeInRight");
+    $(".project-intro-inner-button").html("자세히보기");
   }
 }
 
@@ -238,3 +277,35 @@ $(document).ready(function () {
   preload(images);
   // swiper schedule
 });
+
+let target = document.querySelector("#fullpage");
+
+let observer = new MutationObserver((mutations) => {
+  // 노드가 변경 됐을 때의 작업
+  if (isScrolledIntoView($("#sentence-block")[0])) {
+    $(".reveal").each(function () {
+      $(this).removeClass("active");
+    });
+  } else {
+    $(".reveal").each(function () {
+      $(this).addClass("active");
+    });
+  }
+});
+
+// 감시자의 설정
+let option = {
+  attributes: true,
+};
+
+observer.observe(target, option);
+
+function isScrolledIntoView(elem) {
+  var docViewTop = $(window).scrollTop();
+  var docViewBottom = docViewTop + $(window).height();
+
+  var elemTop = $(elem).offset().top;
+  var elemBottom = elemTop + $(elem).height();
+
+  return elemBottom <= docViewBottom && elemTop >= docViewTop;
+}
