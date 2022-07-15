@@ -270,6 +270,9 @@ $(document).ready(function () {
     showCursor: false,
     onComplete: () => {
       $(".overlay").fadeOut(700);
+      $(".reveal").each(function () {
+        $(this).removeClass("active");
+      });
     },
   };
   new Typed(".overlay > div", typed_options);
@@ -277,8 +280,6 @@ $(document).ready(function () {
   preload(images);
   // swiper schedule
 });
-
-let target = document.querySelector("#fullpage");
 
 let observer = new MutationObserver((mutations) => {
   // 노드가 변경 됐을 때의 작업
@@ -298,7 +299,7 @@ let option = {
   attributes: true,
 };
 
-observer.observe(target, option);
+observer.observe(document.querySelector("#fullpage"), option);
 
 function isScrolledIntoView(elem) {
   var docViewTop = $(window).scrollTop();
