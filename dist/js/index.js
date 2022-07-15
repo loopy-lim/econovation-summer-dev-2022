@@ -81,6 +81,7 @@ function projectTeamButtonClick(teamName) {
 
   $(".project-intro-img").animate({ width: 600 }, 500);
   $("#project-intro-box").css("display", "");
+  $("#project-intro-box").addClass("fadeInRight");
   $("#project-intro-subbox").addClass("fadeOutRight");
   setTimeout(() => {
     $("#project-intro-subbox").css("display", "none");
