@@ -122,7 +122,7 @@ const introData = {
         {
           teamName: "썬ing",
           img: "dist/images/별을찾아서.png",
-          title: "“준비완료.<br>포링 나와라,<br>샤샤!”",
+          title: "준비완료. 포링<br>나와라, 샤샤!",
           appName: "별을찾아서",
           people: "박수현",
           subTitle: "귀여운 캐릭터들과 함께하는<br>우주여행 2D 러너 게임",

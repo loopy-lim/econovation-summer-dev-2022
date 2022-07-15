@@ -415,17 +415,18 @@ a:hover {
 }
 
 .project-section-title{
-	font-size: 75px;
+	font-size: 80px;
 	font-weight: bolder;
 }
 
 .project-section-team-box button{
-	margin-right: 10px;
+	font-size: 30px;
+	margin-right: 20px;
 }
 
 .project-intro-img {
 	height: 600px;
-	width: 600px;
+	width: 100%;
 }
 
 .project-intro-inner-section{
@@ -468,9 +469,9 @@ a:hover {
 
 #project-intro-box {
 	display: flex;
-	margin-left: auto;
 	margin-right: auto;
 	align-items: center;
+	height: 600px;
 }
 
 .project-intro-inner-box {
@@ -482,6 +483,7 @@ a:hover {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin-left: auto;
 	width: 340px;
 	margin-right: auto;
 }
@@ -501,4 +503,36 @@ a:hover {
 	font-size: 15px;
 	font-weight: normal;
 	margin-bottom: 28px;
+}
+
+@keyframes fadeInRight {
+	0% {
+			opacity: 0;
+			transform: translate3d(100%, 0, 0);
+	}
+	to {
+			opacity: 1;
+			transform: translateZ(0);
+	}
+}
+
+.fadeInRight {
+	position: relative;
+	animation: fadeInRight 0.7s;
+}
+
+@keyframes fadeOutRight {
+	to {
+			opacity: 0;
+			transform: translate3d(100%, 0, 0);
+	}
+	0% {
+			opacity: 1;
+			transform: translateZ(0);
+	}
+}
+
+.fadeOutRight {
+	position: relative;
+	animation: fadeOutRight 0.7s;
 }

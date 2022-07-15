@@ -52,9 +52,9 @@ function introAttache() {
 
 function projectTeamButtonClick(teamName) {
   $(".project-section-title").css("color", "#D7D7D7D7");
-  $(".project-section-title").animate({ fontSize: 44 });
-  $(".project-section-team-box").animate({ fontSize: 14 });
-  $(".project-section-team-box").animate({ width: 135 });
+  $(".project-section-title").animate({ fontSize: 58 });
+  $(".project-section-team-button").animate({ fontSize: 21 });
+  $(".project-section-team-box").animate({ width: 300 });
   $("#project-menu-box").animate({ width: 250 });
   $(".project-section-team-box button").css("color", "#D7D7D7D7");
   $(".project-section-team-box")
@@ -80,17 +80,27 @@ function projectTeamButtonClick(teamName) {
   $(".project-intro-tech").html(selectTeam.tech);
 
   $(".project-intro-img").animate({ width: 600 }, 500);
-  $("#project-intro-subbox").hide("slow");
-  $("#project-intro-box").show("slow");
+  $("#project-intro-box").css("display", "");
+  $("#project-intro-subbox").addClass("fadeOutRight");
+  setTimeout(() => {
+    $("#project-intro-subbox").css("display", "none");
+  }, 700);
 }
 
 function projectDetailButtonClick() {
   if ($("#project-intro-subbox").css("display") == "none") {
     $(".project-intro-img").animate({ width: 190 }, 500);
+    $("#project-intro-subbox").css("display", "");
+    $("#project-intro-subbox").addClass("fadeInRight");
+    $("#project-intro-subbox").removeClass("fadeOutRight");
   } else {
     $(".project-intro-img").animate({ width: 600 }, 500);
+    $("#project-intro-subbox").addClass("fadeOutRight");
+    setTimeout(() => {
+      $("#project-intro-subbox").css("display", "none");
+    }, 700);
+    $("#project-intro-subbox").removeClass("fadeInRight");
   }
-  $("#project-intro-subbox").toggle("slow");
 }
 
 const images = [
