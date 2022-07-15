@@ -1,0 +1,11 @@
+{
+  "name": "econovation-summer-dev-2022",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/loopy-lim/econovation-summer-dev-2022.git",
+  "author": "loopy-lim <loopy@jnu.ac.kr>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

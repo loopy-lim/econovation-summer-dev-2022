@@ -78,6 +78,7 @@ function projectTeamButtonClick(teamName) {
   $(".project-intro-inner-subtitle").html(selectTeam.subTitle);
   $(".project-intro-idea").html(selectTeam.idea);
   $(".project-intro-tech").html(selectTeam.tech);
+
   $(".project-intro-img").animate({ width: 600 }, 500);
   $("#project-intro-subbox").hide("slow");
   $("#project-intro-box").show("slow");
