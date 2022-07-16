@@ -316,6 +316,7 @@ a:hover {
 	font-size: 70px;
 	font-weight: 600;
 	margin-bottom: 80px;
+	line-height: 60px;
 }
 
 .sentence-subtitle {
@@ -358,7 +359,8 @@ a:hover {
 	position: relative;
 }
 .reveal span:after {
-	background: #2DFFA6;
+	background: #006FFF;
+	opacity: 0.29;
 }
 
 .reveal.active > span:after, .reveal.active > p:after {
@@ -371,7 +373,7 @@ a:hover {
 	left: 0;
 	bottom: 3px;
 	width: 0;
-	height: 30%;
+	height: 40%;
 	transform-origin: right;
 	transition: width 1s ease-out;
 	transition-delay: 0.5s;

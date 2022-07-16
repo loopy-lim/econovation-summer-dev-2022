@@ -236,15 +236,7 @@ $(document).ready(function () {
   }
 
   new fullpage("#fullpage", {
-    licenseKey: "",
-    anchors: [
-      "firstPage",
-      "secondPage",
-      "thirdPage",
-      "fourthPage",
-      "fifthPage",
-      "sixthPage",
-    ],
+    licenseKey: "gplv3-license",
     sectionsColor: [
       "#fff",
       "#fff",
