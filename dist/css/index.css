@@ -183,6 +183,7 @@ a:hover {
 #notice {
 	justify-content: space-between;
 }
+
 .notice-button:hover {
 	cursor: url(/dist/images/point.png), auto !important;
 	opacity: 0.7;
@@ -268,40 +269,44 @@ a:hover {
 }
 
 #mw1 {
-	animation:img-scroll 15s linear infinite;
+	animation: img-scroll 15s linear infinite;
 }
+
 #mw2 {
 	animation: img-scroll 17s linear infinite;
 	margin-left: -300px;
 }
+
 #mw3 {
 	animation: img-scroll 16s linear infinite;
 	margin-left: -1000px;
 }
 
-.move-word{
+.move-word {
 	white-space: nowrap;
 	margin-top: 80px;
 }
+
 .move-word img {
 	margin-right: 50px;
 }
 
 @keyframes img-scroll {
-  from{
-    transform:translateX(0%);
-    -moz-transform:translateX(0%);
-    -webkit-transform:translateX(0%);
-    -o-transform:translateX(0%);
-    -ms-transform:translateX(0%);
-  }
-  to{
-    transform:translateX(-200%);
-    -moz-transform:translateX(-200%);
-    -webkit-transform:translateX(-200%);
-    -o-transform:translateX(-200%);
-    -ms-transform:translateX(-200%);
-  }
+	from {
+		transform: translateX(0%);
+		-moz-transform: translateX(0%);
+		-webkit-transform: translateX(0%);
+		-o-transform: translateX(0%);
+		-ms-transform: translateX(0%);
+	}
+
+	to {
+		transform: translateX(-200%);
+		-moz-transform: translateX(-200%);
+		-webkit-transform: translateX(-200%);
+		-o-transform: translateX(-200%);
+		-ms-transform: translateX(-200%);
+	}
 }
 
 #sentence-block {
@@ -327,6 +332,7 @@ a:hover {
 .reveal.active:before {
 	transform: scaleX(0);
 }
+
 .reveal:before {
 	content: '';
 	position: absolute;
@@ -354,20 +360,24 @@ a:hover {
 	transition-delay: 0s;
 }
 
-.reveal > span, .reveal > p {
+.reveal>span,
+.reveal>p {
 	display: inline-block;
 	position: relative;
 }
+
 .reveal span:after {
 	background: #006FFF;
 	opacity: 0.29;
 }
 
-.reveal.active > span:after, .reveal.active > p:after {
+.reveal.active>span:after,
+.reveal.active>p:after {
 	width: 100%;
 }
 
-.reveal > span:after, .reveal > p:after {
+.reveal>span:after,
+.reveal>p:after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -393,7 +403,7 @@ a:hover {
 	align-items: center;
 }
 
-.faq{
+.faq {
 	align-items: center;
 }
 
@@ -411,7 +421,7 @@ a:hover {
 	width: 465px;
 	height: 47px;
 	border-bottom: 1px solid;
-	margin-top:20px;
+	margin-top: 20px;
 	display: flex;
 	justify-content: space-between;
 	font-weight: bold;
@@ -471,7 +481,7 @@ a:hover {
 }
 
 .event-button:hover {
-	color:black;
+	color: black;
 	opacity: 0.7;
 }
 
@@ -488,12 +498,12 @@ a:hover {
 	justify-content: center;
 }
 
-.project-section-title{
+.project-section-title {
 	font-size: 80px;
 	font-weight: bolder;
 }
 
-.project-section-team-box button{
+.project-section-team-box button {
 	font-size: 30px;
 	margin-right: 20px;
 }
@@ -502,7 +512,7 @@ a:hover {
 	height: 600px;
 }
 
-.project-intro-inner-section{
+.project-intro-inner-section {
 	color: #9B9B9B;
 	font-size: 24px;
 	font-weight: bolder;
@@ -520,10 +530,12 @@ a:hover {
 	align-items: baseline;
 	margin-bottom: 20px;
 }
-.project-intro-inner-team-title{
+
+.project-intro-inner-team-title {
 	font-size: 27px;
 	font-weight: bold;
 }
+
 .project-intro-inner-team-people {
 	margin-left: 20px;
 	font-size: 15px;
@@ -534,7 +546,8 @@ a:hover {
 	font-size: 18px;
 	margin-bottom: 25px;
 }
-.project-intro-inner-button{
+
+.project-intro-inner-button {
 	border-radius: 1000px;
 	padding: 10px 20px;
 	border: 1px solid;
@@ -567,11 +580,13 @@ a:hover {
 	margin-bottom: 15px;
 	line-height: 30px;
 }
+
 .project-intro-idea {
 	font-size: 15px;
 	font-weight: normal;
 	margin-bottom: 28px;
 }
+
 .project-intro-tech {
 	font-size: 15px;
 	font-weight: normal;
@@ -580,12 +595,30 @@ a:hover {
 
 @keyframes fadeInRight {
 	0% {
-			opacity: 0;
-			transform: translate3d(100%, 0, 0);
+		opacity: 0;
+		transform: translate3d(100%, 0, 0);
 	}
+
 	to {
-			opacity: 1;
-			transform: translateZ(0);
+		opacity: 1;
+		transform: translateZ(0);
+	}
+}
+
+.fadeInLeft {
+	position: relative;
+	animation: fadeInLeft 0.7s;
+}
+
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translate3d(-100%, 0, 0);
+		}
+
+	to {
+		opacity: 1;
+		transform: translateZ(0);
 	}
 }
 
@@ -596,16 +629,102 @@ a:hover {
 
 @keyframes fadeOutRight {
 	to {
-			opacity: 0;
-			transform: translate3d(100%, 0, 0);
+		opacity: 0;
+		transform: translate3d(100%, 0, 0);
 	}
+
 	0% {
-			opacity: 1;
-			transform: translateZ(0);
+		opacity: 1;
+		transform: translateZ(0);
 	}
 }
 
 .fadeOutRight {
 	position: relative;
 	animation: fadeOutRight 0.7s;
+}
+
+.timetable-line-box {
+	width: 100%;
+	border-bottom: 1px solid;
+}
+
+.timetable-line {
+	display: flex;
+	justify-content: center;
+}
+
+.timetable-circle {
+	background: white;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	margin-bottom: -10px;
+	border: 1px solid;
+}
+
+.timetable-circle-box .active {
+	background-color: black;
+	-webkit-transition: background-color 0.4s linear;
+	-ms-transition: background-color 0.4s linear;
+	transition: background-color 0.4s linear;
+}
+
+.timetable-circle-box .selected {
+	color: black;
+	-webkit-transition: background-color 0.4s linear;
+	-ms-transition: background-color 0.4s linear;
+	transition: background-color 0.4s linear;
+}
+
+.timetable-title {
+	font-size: 40px;
+	font-weight:bold;
+	margin-bottom: 37px;
+}
+
+.timetable-time {
+	font-size: 38px;
+	font-weight: 200;
+	margin-bottom: 38px;
+}
+
+.timetable-teams {
+	display: flex;
+	font-size: 22px;
+	margin-bottom: 68px;
+}
+
+.timetable-team {
+	margin-right: 38px;
+}
+
+.timetable-team:last-child {
+	margin-right: 0px;
+}
+
+.timetable-circle-title {
+	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #E8E8E8;
+}
+
+.timetable-button-box {
+	font-size: 16px;
+	margin-top: 80px
+}
+
+.timetable-button-box button {
+	padding: 10px 20px;
+	border: 1px solid;
+	border-radius: 1000px;
+	margin-left: 24px;
+}
+
+.timetable-circle-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 200px;
 }

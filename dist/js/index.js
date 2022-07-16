@@ -156,6 +156,60 @@ function projectDetailButtonClick() {
   }
 }
 
+function timetableAttach() {
+  const timetableData = timetable["data"];
+
+  timetableData.forEach((t) => {
+    let $circle = $(`<div class="timetable-circle"></div>`);
+    let $title = $(`<div class="timetable-circle-title">${t.type}</div>`);
+    let $box = $(`<div class="timetable-circle-box"></div>`);
+    $box.append($title);
+    $box.append($circle);
+    $(".timetable-line").append($box);
+  });
+
+  let timetableL = timetableData.length;
+  addTimetableData(timetableData[0], 0);
+
+  let curDataIndex = 1;
+  setInterval(() => {
+    if (timetableL == curDataIndex) {
+      curDataIndex = 0;
+    }
+    addTimetableData(timetableData[curDataIndex], curDataIndex);
+    curDataIndex += 1;
+  }, 2000);
+}
+
+function addTimetableData(data, index) {
+  $(".timetable-title").html(data.type);
+  $(".timetable-time").html(data.time);
+  $(".timetable-teams")[0].innerHTML = "";
+
+  $(".timetable-circle").each(function (i) {
+    if (i <= index) {
+      $(this).addClass("active");
+    } else {
+      $(this).removeClass("active");
+    }
+  });
+  $(".timetable-circle-title").each(function (i) {
+    if (i <= index) {
+      $(this).addClass("selected");
+    } else {
+      $(this).removeClass("selected");
+    }
+  });
+
+  data.teams.split(", ").forEach((team) => {
+    let teamDiv = document.createElement("div");
+    teamDiv.classList.add("timetable-team");
+    teamDiv.innerHTML = team;
+
+    $(".timetable-teams")[0].appendChild(teamDiv);
+  });
+}
+
 const images = [
   "dist/images/별을찾아서.png",
   "dist/images/손말잇기.png",
@@ -229,6 +283,7 @@ $(document).ready(function () {
   moveWord();
   swiperSchedule();
   introAttache();
+  timetableAttach();
 
   let href = location.href;
   if (href[href.length - 1] == "/") {
