@@ -14,12 +14,32 @@ function buttonBind() {
 
   $(".project-intro-inner-button").on("click", projectDetailButtonClick);
 
-  $("#kakaotalk-notice").on("click", function () {});
-  $("#medium-notice").on("click", function () {});
-  $("#instagram-notice").on("click", function () {});
-  $("#homepage-notice").on("click", function () {});
-  $("#go-everytime").on("click", function () {});
-  $("#go-instagram").on("click", function () {});
+  // TODO: 링크를 넣어주세요
+  $("#kakaotalk-notice").on("click", function () {
+    goLink(link);
+  });
+  $("#medium-notice").on("click", function () {
+    goLink(link);
+  });
+  $("#instagram-notice").on("click", function () {
+    goLink(link);
+  });
+  $("#homepage-notice").on("click", function () {
+    goLink(link);
+  });
+  $("#go-everytime").on("click", function () {
+    goLink(link);
+  });
+  $("#go-instagram").on("click", function () {
+    goLink(link);
+  });
+  $("#preorder").on("click", function () {
+    goLink(link);
+  });
+  $("#linkcopy").on("click", function () {
+    navigator.clipboard.writeText(location.origin);
+    alert("다른 곳에 홍보해 보세요!");
+  });
   $("#category-timetable").on("click", function () {
     location.href = location.pathname + "#timetable";
   });
@@ -35,6 +55,10 @@ function buttonBind() {
   $("#category-notice").on("click", function () {
     location.href = location.pathname + "#notice";
   });
+}
+
+function goLink(link) {
+  window.open(link, "_blank");
 }
 
 function introAttache() {
@@ -155,24 +179,36 @@ function projectDetailButtonClick() {
     $(".project-intro-inner-button").html("자세히보기");
   }
 }
+let curDataIndex = 1;
+const timetableData = timetable["data"];
+let autoI = -1;
 
 function timetableAttach() {
-  const timetableData = timetable["data"];
-
-  timetableData.forEach((t) => {
+  timetableData.forEach((t, i) => {
     let $circle = $(`<div class="timetable-circle"></div>`);
     let $title = $(`<div class="timetable-circle-title">${t.type}</div>`);
     let $box = $(`<div class="timetable-circle-box"></div>`);
+
+    $box.attr("data-timetable", i);
     $box.append($title);
     $box.append($circle);
     $(".timetable-line").append($box);
   });
 
-  let timetableL = timetableData.length;
-  addTimetableData(timetableData[0], 0);
+  $(".timetable-circle-box").on("click", function () {
+    let i = $(this).attr("data-timetable");
+    addTimetableData(timetableData[i], i);
+    curDataIndex = parseInt(i);
+  });
 
-  let curDataIndex = 1;
-  setInterval(() => {
+  addTimetableData(timetableData[0], 0);
+  autoTimetable();
+}
+
+function autoTimetable() {
+  let timetableL = timetableData.length;
+
+  autoI = setInterval(() => {
     if (timetableL == curDataIndex) {
       curDataIndex = 0;
     }
@@ -284,6 +320,7 @@ $(document).ready(function () {
   swiperSchedule();
   introAttache();
   timetableAttach();
+  preload(images);
 
   let href = location.href;
   if (href[href.length - 1] == "/") {
@@ -336,9 +373,6 @@ $(document).ready(function () {
     },
   };
   new Typed(".overlay > div", typed_options);
-
-  preload(images);
-  // swiper schedule
 });
 
 let observer = new MutationObserver((mutations) => {
