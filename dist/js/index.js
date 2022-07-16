@@ -46,6 +46,10 @@ function introAttache() {
     projectTitle.className = "project-section-title";
     projectTitle.id = d.type;
     projectTitle.innerHTML = d.type;
+    projectTitle.addEventListener("click", function () {
+      let selectedTeam = this.getAttribute("data-team") || d.teams[0].teamName;
+      projectTeamButtonClick(selectedTeam);
+    });
     projectBox.appendChild(projectTitle);
     const projectTeamBox = document.createElement("div");
     projectTeamBox.className = "project-section-team-box";
@@ -66,6 +70,8 @@ function introAttache() {
 }
 
 function projectTeamButtonClick(teamName) {
+  $(`#${teamType[teamName]}`).attr("data-team", teamName);
+
   $(".project-section-title").css("color", "#D7D7D7D7");
   $(".project-section-title").animate({ fontSize: 58 });
   $(".project-section-team-button").animate({ fontSize: 21 });

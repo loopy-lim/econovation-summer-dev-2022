@@ -4,7 +4,7 @@ const introData = {
       type: "APP",
       teams: [
         {
-          teamName: "Surfygers",
+          teamName: "Surfyagers",
           img: "dist/images/juggle.png",
           title: "우리의<br>동반성장을 위한<br>지속 가능한 생태계,",
           appName: "Junggle",
@@ -137,7 +137,7 @@ const introData = {
 };
 
 const teamType = {
-  Surfygers: "APP",
+  Surfyagers: "APP",
   나나김: "APP",
   "멋.알": "WEB",
   E1I3: "WEB",
