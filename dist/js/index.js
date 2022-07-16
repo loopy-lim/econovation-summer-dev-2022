@@ -16,16 +16,16 @@ function buttonBind() {
 
   // TODO: 링크를 넣어주세요
   $("#kakaotalk-notice").on("click", function () {
-    goLink("");
+    goLink("https://pf.kakao.com/_laTLs");
   });
   $("#medium-notice").on("click", function () {
-    goLink("");
+    goLink("https://medium.com/econovation");
   });
   $("#instagram-notice").on("click", function () {
-    goLink("");
+    goLink("https://www.instagram.com/cnu_econovation/");
   });
   $("#homepage-notice").on("click", function () {
-    goLink("");
+    goLink("https://econovation.kr/about");
   });
   $("#go-everytime").on("click", function () {
     goLink("");
@@ -34,7 +34,9 @@ function buttonBind() {
     goLink("");
   });
   $("#preorder").on("click", function () {
-    goLink("");
+    goLink(
+      "https://docs.google.com/forms/d/e/1FAIpQLSfJoYv7umKo5Sq5KrEBkxtXtOOy9p6A0qB9YR4HooCrnD8XmQ/viewform"
+    );
   });
   $("#linkcopy").on("click", function () {
     let currentUrl = window.document.location.origin;
