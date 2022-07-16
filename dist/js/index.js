@@ -16,28 +16,36 @@ function buttonBind() {
 
   // TODO: 링크를 넣어주세요
   $("#kakaotalk-notice").on("click", function () {
-    goLink(link);
+    goLink("");
   });
   $("#medium-notice").on("click", function () {
-    goLink(link);
+    goLink("");
   });
   $("#instagram-notice").on("click", function () {
-    goLink(link);
+    goLink("");
   });
   $("#homepage-notice").on("click", function () {
-    goLink(link);
+    goLink("");
   });
   $("#go-everytime").on("click", function () {
-    goLink(link);
+    goLink("");
   });
   $("#go-instagram").on("click", function () {
-    goLink(link);
+    goLink("");
   });
   $("#preorder").on("click", function () {
-    goLink(link);
+    goLink("");
   });
   $("#linkcopy").on("click", function () {
-    navigator.clipboard.writeText(location.origin);
+    let currentUrl = window.document.location.origin;
+
+    let t = document.createElement("textarea");
+    document.body.appendChild(t);
+    t.value = currentUrl;
+    t.select();
+    document.execCommand("copy");
+    document.body.removeChild(t);
+
     alert("다른 곳에 홍보해 보세요!");
   });
   $("#category-timetable").on("click", function () {
