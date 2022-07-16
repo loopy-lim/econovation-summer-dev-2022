@@ -18,6 +18,8 @@ function buttonBind() {
   $("#medium-notice").on("click", function () {});
   $("#instagram-notice").on("click", function () {});
   $("#homepage-notice").on("click", function () {});
+  $("#go-everytime").on("click", function () {});
+  $("#go-instagram").on("click", function () {});
   $("#category-timetable").on("click", function () {
     location.href = location.pathname + "#timetable";
   });
@@ -43,7 +45,7 @@ function introAttache() {
     const projectBox = document.createElement("div");
     projectBox.className = "project-section-box";
     const projectTitle = document.createElement("div");
-    projectTitle.className = "project-section-title";
+    projectTitle.className = "project-section-title argentum";
     projectTitle.id = d.type;
     projectTitle.innerHTML = d.type;
     projectTitle.addEventListener("click", function () {
@@ -83,7 +85,12 @@ function projectTeamButtonClick(teamName) {
     .css("color", "black");
   $(`#${teamType[teamName]}`).css("color", "black");
 
-  if ($("#project-intro-subbox").css("display") == "none") {
+  if ($("#project-intro-box").css("display") == "none") {
+    changeProjectData(teamName);
+    $(".project-intro-img").animate({ width: 600 }, 500);
+    $("#project-intro-box").css("display", "");
+    $("#project-intro-box").addClass("fadeInRight");
+  } else if ($("#project-intro-subbox").css("display") == "none") {
     $(".project-intro-img").animate({ width: 600 }, 500);
     $("#project-intro-subbox").addClass("fadeOutRight");
     $("#project-intro-box").addClass("fadeOutRight");
@@ -159,7 +166,7 @@ const images = [
   "dist/images/healper.png",
   "dist/images/juggle.png",
   "dist/images/t-econo.png",
-  "dist/images/econovation_h",
+  "dist/images/econovation_h.png",
 ];
 
 function preload(images) {
