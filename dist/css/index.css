@@ -54,7 +54,9 @@ a:hover {
 	transform: translate(-50%, -50%);
 	text-align: left;
 	vertical-align: middle;
-	font-size: 85px
+	font-size: 85px;
+	font-weight: 500;
+	line-height: 90px;
 }
 
 #category-button {
