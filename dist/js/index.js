@@ -231,7 +231,7 @@ function addTimetableData(data, index) {
   $(".timetable-teams")[0].innerHTML = "";
 
   $(".timetable-circle").each(function (i) {
-    if (i <= index) {
+    if (i == index) {
       $(this).addClass("active");
     } else {
       $(this).removeClass("active");
