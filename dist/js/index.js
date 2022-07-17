@@ -28,10 +28,10 @@ function buttonBind() {
     goLink("https://econovation.kr/about");
   });
   $("#go-everytime").on("click", function () {
-    goLink("");
+    goLink("https://everytime.kr/375208/v/260360163");
   });
   $("#go-instagram").on("click", function () {
-    goLink("");
+    goLink(" https://www.instagram.com/p/CgGeW8YrA7D/?igshid=YmMyMTA2M2Y=");
   });
   $("#preorder").on("click", function () {
     goLink(
