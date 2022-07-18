@@ -1,10 +1,10 @@
 body,
 html {
-	cursor: url(/dist/images/cursor.png), auto
+	cursor: url(dist/images/cursor.png), auto
 }
 
 button:hover {
-	cursor: url(/dist/images/point.png), auto !important;
+	cursor: url(dist/images/point.png), auto !important;
 	opacity: 0.7;
 }
 
@@ -16,7 +16,7 @@ button {
 }
 
 a:hover {
-	cursor: url(/dist/images/point.png), auto !important;
+	cursor: url(dist/images/point.png), auto !important;
 	opacity: 0.7;
 }
 
@@ -185,7 +185,7 @@ a:hover {
 }
 
 .notice-button:hover {
-	cursor: url(/dist/images/point.png), auto !important;
+	cursor: url(dist/images/point.png), auto !important;
 	opacity: 0.7;
 }
 
@@ -443,7 +443,7 @@ a:hover {
 }
 
 .faq-q-box:hover {
-	cursor: url(/dist/images/point.png), auto !important;
+	cursor: url(dist/images/point.png), auto !important;
 	opacity: 0.7;
 }
 
@@ -503,7 +503,7 @@ a:hover {
 	font-weight: bolder;
 }
 .project-section-title:hover {
-	cursor: url(/dist/images/point.png), auto !important;
+	cursor: url(dist/images/point.png), auto !important;
 	opacity: 0.7;
 }
 
@@ -669,7 +669,7 @@ a:hover {
 }
 
 .timetable-circle-box:hover {
-	cursor: url(/dist/images/point.png), auto !important;
+	cursor: url(dist/images/point.png), auto !important;
 }
 
 .timetable-circle-box:hover .timetable-circle-title {
